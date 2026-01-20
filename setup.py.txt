@@ -1,0 +1,40 @@
+from setuptools import setup, find_packages
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setup(
+    name="ai-video-generator",
+    version="1.0.0",
+    author="Your Name",
+    author_email="your.email@example.com",
+    description="AI-powered video and image generation tool",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/dxpe147/ai-video-generator",
+    packages=find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Topic :: Multimedia :: Video",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    ],
+    python_requires=">=3.8",
+    install_requires=[
+        "torch>=2.0.0",
+        "diffusers>=0.22.0",
+        "transformers>=4.35.0",
+        "gradio>=4.12.0",
+        "opencv-python>=4.8.0",
+        "pillow>=10.0.0",
+        "numpy>=1.24.0",
+        "imageio>=2.31.0",
+        "moviepy>=1.0.3",
+    ],
+    entry_points={
+        "console_scripts": [
+            "ai-video=app_ui:main",
+        ],
+    },
+)
